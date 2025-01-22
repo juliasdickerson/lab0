@@ -11,7 +11,6 @@ module fsm (input logic  clk,
      if (reset) state <= S0;
      else state <= nextstate;
    
-   // next state logic
    always_comb
      case (state)
        S0: if (a) nextstate = S0;

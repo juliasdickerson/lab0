@@ -14,14 +14,14 @@ module rf (input logic         clk,
 
    //write third port on rising edge of clock 
    always_ff @(posedge clk) begin
-      if(we3) begin
+      if(we3 && wa3 != 0) begin
          rf[wa3] <= wd3;
       end
    end
 
    // combinationally read operations
-   assign rd1 = (ra1 != 0) ? rf[ra1] : 0;
-   assign rd2 = (ra2 != 0) ? rf[ra2] : 0;
+   assign rd1 = (ra1 != 0) ? rf[ra1] : 32'b0;
+   assign rd2 = (ra2 != 0) ? rf[ra2] : 32'b0;
    
    
 endmodule // regfile
