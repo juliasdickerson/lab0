@@ -1,4 +1,4 @@
-module regfile (input logic         clk, 
+module rf (input logic         clk, 
 		input logic 	    we3, 
 		input logic [4:0]   ra1, ra2, wa3, 
 		input logic [31:0]  wd3, 
